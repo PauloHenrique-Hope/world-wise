@@ -17,6 +17,7 @@ export function CityItem({ city }) {
   };
 
   const { cityName, emoji, date, position } = city;
+  if (!position) return;
   return (
     <Link to={`${city.id}?lat=${position.lat}&lng=${position.lng}`}>
       <li className="flex justify-between text-white bg-blue-900 p-2 border-green-700 border-l-4 rounded-lg">

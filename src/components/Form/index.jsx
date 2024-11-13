@@ -1,3 +1,5 @@
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../Button";
@@ -17,7 +19,7 @@ const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 export function Form() {
   const [lat, lng] = useUrlPosition();
-  const { isLoading } = useCities();
+  const { createCity } = useCities();
   const navigate = useNavigate();
 
   const [cityName, setCityName] = useState("");
@@ -60,13 +62,34 @@ export function Form() {
     [lat, lng]
   );
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!cityName || !date) return;
+
+    const newCity = {
+      cityName,
+      country,
+      emoji,
+      notes,
+      date,
+      position: { lat, lng },
+    };
+
+    await createCity(newCity);
+    navigate("/app/cities");
+  }
+
   if (!lat && !lng)
     return <Message message="Start by clicking somewhere on the map" />;
 
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
-    <form className="flex flex-col mx-auto px-2 gap-2 w-full ">
+    <form
+      className="flex flex-col mx-auto px-2 gap-2 w-full "
+      onSubmit={handleSubmit}
+    >
       <div className="flex flex-col text-white">
         <label className="text-xl font-medium" htmlFor="cityName">
           City Name
@@ -83,11 +106,17 @@ export function Form() {
         <label className="text-xl font-medium" htmlFor="date">
           When did you go to?
         </label>
-        <input
+        {/* <input
           className="text-xl text-black  outline-none pl-1 py-2"
           id="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
+        /> */}
+        <DatePicker
+          className="text-xl text-black  outline-none pl-1 py-2 w-full"
+          dateFormat="dd/MM/yyyy"
+          selected={date}
+          onChange={(date) => setDate(date)}
         />
       </div>
 
