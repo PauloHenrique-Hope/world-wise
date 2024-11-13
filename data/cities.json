@@ -1,42 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": "73930385"
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "Wonderful",
-      "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": "17806751"
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": "98443197"
-    },
-    {
       "id": "11d4"
     },
     {
@@ -52,27 +16,39 @@
       "id": "fd41"
     },
     {
-      "id": "4c50",
-      "cityName": "Gingelom",
-      "country": "Belgium",
-      "emoji": "🇧🇪",
-      "notes": "asd",
-      "date": "2024-11-13T19:40:11.084Z",
+      "id": "bc9b",
+      "cityName": "Domousice",
+      "country": "Czechia",
+      "emoji": "🇨🇿",
+      "notes": "",
+      "date": "2024-11-13T19:57:16.317Z",
       "position": {
-        "lat": "50.764259357116465",
-        "lng": "5.223881556794368"
+        "lat": "50.233151832472245",
+        "lng": "13.708429596303487"
       }
     },
     {
-      "id": "7a50",
-      "cityName": "Iranduba",
+      "id": "0a41",
+      "cityName": "Rzasnik",
+      "country": "Poland",
+      "emoji": "🇵🇱",
+      "notes": "",
+      "date": "2024-11-13T19:57:18.961Z",
+      "position": {
+        "lat": "52.77618568896171",
+        "lng": "21.352663288498963"
+      }
+    },
+    {
+      "id": "347d",
+      "cityName": "Tapaua",
       "country": "Brazil",
       "emoji": "🇧🇷",
-      "notes": "asdasd",
-      "date": "2024-11-13T19:40:18.550Z",
+      "notes": "",
+      "date": "2024-11-13T19:57:22.890Z",
       "position": {
-        "lat": "-3.074695072369682",
-        "lng": "-60.78421242470445"
+        "lat": "-5.266007882805498",
+        "lng": "-62.718513532157296"
       }
     }
   ]

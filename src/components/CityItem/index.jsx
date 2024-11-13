@@ -1,9 +1,19 @@
 import { format } from "date-fns";
 import { Link, useSearchParams } from "react-router-dom";
+import { useCities } from "../../contexts/CitiesContext";
+import { Button } from "../Button";
 
 export function CityItem({ city }) {
+  const { deleteCity } = useCities();
+  const { id, cityName, emoji, date, position } = city;
   const now = new Date();
   const formattedDate = format(now, "yyyy-MM-dd");
+
+  function handleDelete(e) {
+    e.preventDefault();
+    deleteCity(id);
+  }
+
   const flagemojiToPNG = (flag) => {
     var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
 
@@ -16,7 +26,6 @@ export function CityItem({ city }) {
     );
   };
 
-  const { cityName, emoji, date, position } = city;
   if (!position) return;
   return (
     <Link to={`${city.id}?lat=${position.lat}&lng=${position.lng}`}>
@@ -26,6 +35,7 @@ export function CityItem({ city }) {
           <span>{city.cityName}</span>
         </div>
         <span>{formattedDate}</span>
+        <Button onClick={handleDelete}>x</Button>
       </li>
     </Link>
   );
